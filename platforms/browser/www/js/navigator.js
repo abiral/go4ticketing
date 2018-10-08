@@ -43,29 +43,55 @@ jQuery(document).on('init', function(event){
 		break;
 
 		case 'dashboard':
-			jQuery(document).on('tap', '.proceed-to-2', function(event){ //Event listener for navigating to step 2
+			jQuery(document).on('tap', '#select-movie', function(event){ //Event listener for navigating to step 2 movies
 				var location = jQuery('#location').val();
 				if(location == ""){
 					ons.notification.alert('Please select your location first', {title:"Locaiton Not Selected"});
 				}else{
-					navigator.pushPage('step2.html');
+					navigator.pushPage('step2-movies.html');
+				}
+			});
+
+			jQuery(document).on('tap', '#select-event', function(event){ //Event listener for navigating to step 2 event
+				var location = jQuery('#location').val();
+				if(location == ""){
+					ons.notification.alert('Please select your location first', {title:"Locaiton Not Selected"});
+				}else{
+					navigator.pushPage('step2-events.html');
+				}
+			});
+
+			jQuery(document).on('tap', '#select-sport', function(event){ //Event listener for navigating to step 2 sport
+				var location = jQuery('#location').val();
+				if(location == ""){
+					ons.notification.alert('Please select your location first', {title:"Locaiton Not Selected"});
+				}else{
+					navigator.pushPage('step2-sports.html');
 				}
 			});
 		break;
 
+		case 'step2-movies':
+		case 'step2-sports':
+		case 'step2-events':
+			jQuery(document).on('tap', '#proceed-3', function(event){ //Event listener for navigating to step 3
+				navigator.pushPage('step3.html');
+			});
+		break;
+
 		
-		case 'step2':
+		case 'step3':
 
 			jQuery(document).on('tap', '.seat:not(.occupied)', function(event){ //Event Listener to select the seats
 				jQuery(this).toggleClass('selected');
 			});
 
-			jQuery(document).on('tap', '#btn-pay', function(event){ //Event listener for navigating to step 2
-				navigator.pushPage('step3.html');
+			jQuery(document).on('tap', '#btn-pay', function(event){ //Event listener for navigating to final step
+				navigator.pushPage('final.html');
 			});
 		break;
 
-		case 'step3':
+		case 'final':
 			var orderID = Math.floor((Math.random() * 10000) + 2475); // Generating random order ID from 2,475 to 10,000
 			jQuery('#order-number').text(orderID);
 		break;

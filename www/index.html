@@ -40,6 +40,12 @@
                 text-transform: uppercase;
             }
 
+            h4.section-sub-title {
+                text-align: center;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
             .seat{
             	min-width: 50px;
             }
@@ -132,7 +138,6 @@
         <template id="dashboard.html">
         	<ons-page id="dashboard">
         		<ons-toolbar class="toolbar header" inline>
-                    <div class="left"><ons-back-button>Back</ons-back-button></div>
                     <div class="card-title toolbar__center">Go 4 Ticketing</div>
                 </ons-toolbar>
 
@@ -151,23 +156,115 @@
 	                    </p>
 
 	                    <section style="padding: 8px">
-						    <ons-button class="proceed-to-2" modifier="large" style="margin-bottom:5px;padding:10px"><ons-icon size="30px" icon="fa-camera"></ons-icon> Movie</ons-button>
-						    <ons-button class="proceed-to-2" modifier="large" style="margin-bottom:5px;padding:10px"><ons-icon size="30px" icon="fa-calendar"></ons-icon> Event</ons-button>
-						    <ons-button class="proceed-to-2" modifier="large" style="margin-bottom:5px;padding:10px"><ons-icon size="30px" icon="fa-soccer-ball-o"></ons-icon> Sports</ons-button>
+						    <ons-button id="select-movie" modifier="large" style="margin-bottom:5px;padding:10px"><ons-icon size="30px" icon="fa-camera"></ons-icon> Movie</ons-button>
+						    <ons-button id="select-event" modifier="large" style="margin-bottom:5px;padding:10px"><ons-icon size="30px" icon="fa-calendar"></ons-icon> Event</ons-button>
+						    <ons-button id="select-sport" modifier="large" style="margin-bottom:5px;padding:10px"><ons-icon size="30px" icon="fa-soccer-ball-o"></ons-icon> Sports</ons-button>
 						</section>
 	                </div>
                 </div>
         	</ons-page>
         </template>
+        
+        <template id="step2-movies.html">
+            <ons-page id="step2-movies">
+                <ons-toolbar class="toolbar header" inline>
+                    <div class="left"><ons-back-button>Back</ons-back-button></div>
+                    <div class="card-title toolbar__center">Go 4 Ticketing</div>
+                </ons-toolbar>
 
-        <template id="step2.html">
-        	<ons-page id="step2">
+                <h3 class="section-title">Step 2 / 3</h3>
+                <h4 class="section-sub-title">Movies</h4>
+                
+                <div class="card-content">
+                    <div style="text-align: center; margin-top: 30px;">
+                        <p class="form-control">
+                            <ons-select id="location" >
+                                <option value="">Select Movie</option>
+                                <option value="venom">Venom</option>
+                                <option value="johnny">Johnny</option>
+                                <option value="smallfoot">Smallfoot</option>
+                                <option value="ladies-in-black">Ladies In Black</option>
+                                <option value="the-house-with-a-clock">The House with a Clock</option>
+                            </ons-select>
+                        </p>
+
+                        <section style="padding: 8px">
+                            <ons-button id="proceed-3" modifier="large" >Proceed to Step 3</ons-button>
+                        </section>
+                    </div>
+                </div>
+            </ons-page>
+        </template>
+
+        <template id="step2-events.html">
+            <ons-page id="step2-events">
+                <ons-toolbar class="toolbar header" inline>
+                    <div class="left"><ons-back-button>Back</ons-back-button></div>
+                    <div class="card-title toolbar__center">Go 4 Ticketing</div>
+                </ons-toolbar>
+
+                <h3 class="section-title">Step 2 / 3</h3>
+                <h4 class="section-sub-title">Events</h4>
+                
+                <div class="card-content">
+                    <div style="text-align: center; margin-top: 30px;">
+                        <p class="form-control">
+                            <ons-select id="location" >
+                                <option value="">Select Events</option>
+                                <option value="antenna-documentary">Antenna Documentary</option>
+                                <option value="tash-sultana">Tash Sultana</option>
+                                <option value="monster-jam">Monster Jam</option>
+                                <option value="nepal-kite-festival">Nepal Kite Festival</option>
+                                <option value="evita">Evita</option>
+                            </ons-select>
+                        </p>
+
+                        <section style="padding: 8px">
+                            <ons-button id="proceed-3" modifier="large" >Proceed to Step 3</ons-button>
+                        </section>
+                    </div>
+                </div>
+            </ons-page>
+        </template>
+
+        <template id="step2-sports.html">
+            <ons-page id="step2-sports">
+                <ons-toolbar class="toolbar header" inline>
+                    <div class="left"><ons-back-button>Back</ons-back-button></div>
+                    <div class="card-title toolbar__center">Go 4 Ticketing</div>
+                </ons-toolbar>
+
+                <h3 class="section-title">Step 2 / 3</h3>
+                <h4 class="section-sub-title">Sports</h4>
+                
+                <div class="card-content">
+                    <div style="text-align: center; margin-top: 30px;">
+                        <p class="form-control">
+                            <ons-select id="location" >
+                                <option value="">Select Sport</option>
+                                <option value="t20-cricket">Australia vs India, T20 Cricket</option>
+                                <option value="x-games">X Games</option>
+                                <option value="monster-energy-aus-x-open">Monster Energy AUS-X Open</option>
+                                <option value="hsbc-sydney-7s-rugby">HSBC Sydney 7s rugby</option>
+                            </ons-select>
+                        </p>
+
+                        <section style="padding: 8px">
+                            <ons-button id="proceed-3" modifier="large" >Proceed to Step 3</ons-button>
+                        </section>
+                    </div>
+                </div>
+            </ons-page>
+        </template>
+
+        <template id="step3.html">
+        	<ons-page id="step3">
         		<ons-toolbar class="toolbar header" inline>
                     <div class="left"><ons-back-button>Back</ons-back-button></div>
                     <div class="card-title toolbar__center">Go 4 Ticketing</div>
                 </ons-toolbar>
 
-                <h3 class="section-title">Step 2 / 2</h3>
+                <h3 class="section-title">Step 3 / 3</h3>
 
                 <div class="card-content">
                 	<div style="text-align: center; margin-top: 30px;">
@@ -244,8 +341,8 @@
             </ons-page>
         </template>
 
-        <template id="step3.html">
-        	<ons-page id="step3">
+        <template id="final.html">
+        	<ons-page id="final">
         		<ons-toolbar class="toolbar header" inline>
                     <div class="left"><ons-back-button>Back</ons-back-button></div>
                     <div class="card-title toolbar__center">Go 4 Ticketing</div>
